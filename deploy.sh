@@ -2,8 +2,9 @@
 
 deploy_param="$1"
 
-if [ "$deploy_param" = "jmx_exporter" ]; then
-  sh prometueus/install.sh
+if [ "$deploy_param" = "jmx" ]; then
+  cd prometheus
+  sh deploy.sh $2
 elif [ "$deploy_param" = "mount_disk" ]; then
   sh linux/mount_disk.sh /home
 elif [ "$deploy_param" = "mojito-server" ]; then

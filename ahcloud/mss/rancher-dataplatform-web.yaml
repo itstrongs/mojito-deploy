@@ -1,0 +1,195 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "10"
+    field.cattle.io/creatorId: u-wg89w
+    field.cattle.io/publicEndpoints: "null"
+    kubectl.kubernetes.io/last-applied-configuration: '{"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{"deployment.kubernetes.io/revision":"1","field.cattle.io/creatorId":"u-wg89w"},"creationTimestamp":"2023-06-08T11:48:15Z","generation":1,"labels":{"cattle.io/creator":"norman","workload.user.cattle.io/workloadselector":"deployment-data-platform-dataplatform-web"},"managedFields":[{"apiVersion":"apps/v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:field.cattle.io/creatorId":{}},"f:labels":{".":{},"f:cattle.io/creator":{},"f:workload.user.cattle.io/workloadselector":{}}},"f:spec":{"f:progressDeadlineSeconds":{},"f:replicas":{},"f:revisionHistoryLimit":{},"f:selector":{},"f:strategy":{"f:type":{}},"f:template":{"f:metadata":{"f:annotations":{".":{},"f:cattle.io/timestamp":{},"f:field.cattle.io/ports":{}},"f:labels":{".":{},"f:workload.user.cattle.io/workloadselector":{}}},"f:spec":{"f:containers":{"k:{\"name\":\"dataplatform-web\"}":{".":{},"f:env":{".":{},"k:{\"name\":\"API_HOST\"}":{".":{},"f:name":{},"f:value":{}},"k:{\"name\":\"LISTEN_PORT\"}":{".":{},"f:name":{},"f:value":{}}},"f:image":{},"f:imagePullPolicy":{},"f:name":{},"f:ports":{".":{},"k:{\"containerPort\":80,\"protocol\":\"TCP\"}":{".":{},"f:containerPort":{},"f:hostPort":{},"f:name":{},"f:protocol":{}}},"f:resources":{},"f:securityContext":{".":{},"f:allowPrivilegeEscalation":{},"f:capabilities":{},"f:privileged":{},"f:readOnlyRootFilesystem":{},"f:runAsNonRoot":{}},"f:stdin":{},"f:terminationMessagePath":{},"f:terminationMessagePolicy":{},"f:tty":{}}},"f:dnsConfig":{},"f:dnsPolicy":{},"f:hostNetwork":{},"f:restartPolicy":{},"f:schedulerName":{},"f:securityContext":{},"f:terminationGracePeriodSeconds":{}}}}},"manager":"Go-http-client","operation":"Update","time":"2023-06-08T11:48:15Z"},{"apiVersion":"apps/v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{"f:deployment.kubernetes.io/revision":{}}},"f:status":{"f:conditions":{".":{},"k:{\"type\":\"Available\"}":{".":{},"f:lastTransitionTime":{},"f:lastUpdateTime":{},"f:message":{},"f:reason":{},"f:status":{},"f:type":{}},"k:{\"type\":\"Progressing\"}":{".":{},"f:lastTransitionTime":{},"f:lastUpdateTime":{},"f:message":{},"f:reason":{},"f:status":{},"f:type":{}}},"f:observedGeneration":{},"f:replicas":{},"f:unavailableReplicas":{},"f:updatedReplicas":{}}},"manager":"kube-controller-manager","operation":"Update","time":"2023-06-08T11:48:15Z"}],"name":"dataplatform-web","namespace":"data-platform","resourceVersion":"8583977","uid":"30314c86-d768-4768-889a-e176c80161bb"},"spec":{"progressDeadlineSeconds":600,"replicas":1,"revisionHistoryLimit":10,"selector":{"matchLabels":{"workload.user.cattle.io/workloadselector":"deployment-data-platform-dataplatform-web"}},"strategy":{"type":"Recreate"},"template":{"metadata":{"annotations":{"cattle.io/timestamp":"2023-06-08T11:48:15Z","field.cattle.io/ports":"[[{\"containerPort\":80,\"dnsName\":\"dataplatform-web-nodeport\",\"hostPort\":0,\"kind\":\"NodePort\",\"name\":\"80tcp180801\",\"protocol\":\"TCP\",\"sourcePort\":18080}]]"},"creationTimestamp":null,"labels":{"workload.user.cattle.io/workloadselector":"deployment-data-platform-dataplatform-web"}},"spec":{"containers":[{"env":[{"name":"API_HOST","value":"dataplatform-server:7009"},{"name":"LISTEN_PORT","value":"80"}],"image":"docker.das-security.cn/dataplatform/data-platform:release-1.4.5-censustag-latest","imagePullPolicy":"Always","name":"dataplatform-web","ports":[{"containerPort":80,"hostPort":80,"name":"80tcp180801","protocol":"TCP"}],"resources":{},"securityContext":{"allowPrivilegeEscalation":false,"capabilities":{},"privileged":false,"readOnlyRootFilesystem":false,"runAsNonRoot":false},"stdin":true,"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","tty":true}],"dnsConfig":{},"dnsPolicy":"ClusterFirstWithHostNet","hostNetwork":true,"restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"terminationGracePeriodSeconds":30}}},"status":{"conditions":[{"lastTransitionTime":"2023-06-08T11:48:15Z","lastUpdateTime":"2023-06-08T11:48:15Z","message":"Deployment
+      does not have minimum availability.","reason":"MinimumReplicasUnavailable","status":"False","type":"Available"},{"lastTransitionTime":"2023-06-08T11:48:15Z","lastUpdateTime":"2023-06-08T11:48:15Z","message":"ReplicaSet
+      \"dataplatform-web-6bb6765956\" is progressing.","reason":"ReplicaSetUpdated","status":"True","type":"Progressing"}],"observedGeneration":1,"replicas":1,"unavailableReplicas":1,"updatedReplicas":1}}'
+  creationTimestamp: null
+  generation: 1
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-data-platform-dataplatform-web
+  managedFields:
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:field.cattle.io/creatorId: {}
+        f:labels:
+          .: {}
+          f:cattle.io/creator: {}
+          f:workload.user.cattle.io/workloadselector: {}
+      f:spec:
+        f:progressDeadlineSeconds: {}
+        f:revisionHistoryLimit: {}
+        f:selector: {}
+        f:strategy:
+          f:type: {}
+        f:template:
+          f:metadata:
+            f:annotations: {}
+            f:labels:
+              .: {}
+              f:workload.user.cattle.io/workloadselector: {}
+          f:spec:
+            f:containers:
+              k:{"name":"dataplatform-web"}:
+                .: {}
+                f:env:
+                  .: {}
+                  k:{"name":"API_HOST"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"LISTEN_PORT"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:ports:
+                  .: {}
+                  k:{"containerPort":80,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:protocol: {}
+                f:resources: {}
+                f:securityContext:
+                  .: {}
+                  f:allowPrivilegeEscalation: {}
+                  f:privileged: {}
+                  f:readOnlyRootFilesystem: {}
+                  f:runAsNonRoot: {}
+                f:stdin: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+                f:tty: {}
+            f:dnsConfig: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext: {}
+            f:terminationGracePeriodSeconds: {}
+    manager: kubectl-client-side-apply
+    operation: Update
+    time: "2023-06-08T11:49:58Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:field.cattle.io/publicEndpoints: {}
+    manager: rancher
+    operation: Update
+    time: "2023-06-08T11:49:58Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+      f:spec:
+        f:replicas: {}
+        f:template:
+          f:metadata:
+            f:annotations:
+              f:cattle.io/timestamp: {}
+              f:field.cattle.io/ports: {}
+          f:spec:
+            f:containers:
+              k:{"name":"dataplatform-web"}:
+                f:ports:
+                  k:{"containerPort":80,"protocol":"TCP"}:
+                    f:name: {}
+            f:dnsPolicy: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2023-06-09T05:24:31Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:deployment.kubernetes.io/revision: {}
+      f:status:
+        f:availableReplicas: {}
+        f:conditions:
+          .: {}
+          k:{"type":"Available"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Progressing"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2023-06-12T05:44:22Z"
+  name: dataplatform-web
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-data-platform-dataplatform-web
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2023-06-12T05:44:19Z"
+        field.cattle.io/ports: '[[{"containerPort":80,"dnsName":"dataplatform-web","kind":"ClusterIP","name":"80tcp802","protocol":"TCP","sourcePort":80}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-data-platform-dataplatform-web
+    spec:
+      containers:
+      - env:
+        - name: API_HOST
+          value: dataplatform-server:7009
+        - name: LISTEN_PORT
+          value: "80"
+        image: docker.das-security.cn/dataplatform/data-platform:release-1.4.5-censustag-latest
+        imagePullPolicy: Always
+        name: dataplatform-web
+        ports:
+        - containerPort: 80
+          name: 80tcp802
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status: {}

@@ -1,0 +1,104 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "17"
+    field.cattle.io/creatorId: u-wg89w
+    field.cattle.io/publicEndpoints: '[{"addresses":["172.16.36.3"],"port":32430,"protocol":"TCP","serviceName":"data-platform:dataplatform-server-nodeport","allNodes":true}]'
+    kubectl.kubernetes.io/last-applied-configuration: '{"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{"deployment.kubernetes.io/revision":"1","field.cattle.io/creatorId":"u-wg89w"},"creationTimestamp":"2023-06-08T11:48:07Z","generation":1,"labels":{"cattle.io/creator":"norman","workload.user.cattle.io/workloadselector":"deployment-data-platform-dataplatform-server"},"name":"dataplatform-server","namespace":"data-platform","resourceVersion":"8583920","uid":"cefaaf3a-b7d3-4555-b99a-d0ae716edfb4"},"spec":{"progressDeadlineSeconds":600,"replicas":1,"revisionHistoryLimit":10,"selector":{"matchLabels":{"workload.user.cattle.io/workloadselector":"deployment-data-platform-dataplatform-server"}},"strategy":{"type":"Recreate"},"template":{"metadata":{"annotations":{"cattle.io/timestamp":"2023-06-08T11:48:06Z","field.cattle.io/ports":"[[{\"containerPort\":7009,\"dnsName\":\"dataplatform-server-nodeport\",\"hostPort\":0,\"kind\":\"NodePort\",\"name\":\"7009tcp324301\",\"protocol\":\"TCP\",\"sourcePort\":32430}]]"},"creationTimestamp":null,"labels":{"workload.user.cattle.io/workloadselector":"deployment-data-platform-dataplatform-server"}},"spec":{"containers":[{"env":[{"name":"dataplatform.basic.on-off.scheduler","value":"true"},{"name":"dataplatform.basic.on-off.scheduler-task.ip-bound-info","value":"true"},{"name":"dataplatform.datasource-name","value":"data_platform"},{"name":"dataplatform.deploy-path","value":"/usr/local/app"},{"name":"dataplatform.kafka.bootstrap-servers","value":"kafka1.ahcloud-private.com:9091,kafka2.ahcloud-private.com:9092,kafka3.ahcloud-private.com:9093"},{"name":"dataplatform.permission.admin-password","value":"85C68F782494D4D647457E23CA8B915B"},{"name":"dataplatform.permission.expiration-time","value":"28800"},{"name":"dataplatform.permission.tenant-adapter","value":"mss"},{"name":"dataplatform.request-log.enabled","value":"true"},{"name":"etl.worker.append-commands","value":"--sinkTest
+      true"},{"name":"etl.worker.directory","value":"/usr/local/app"},{"name":"etl.worker.jar-name","value":"data-platform-etl-flink-1.0.jar"},{"name":"mss.feign.host","value":"http://account.buss-platform:8080"},{"name":"nacos","value":"172.16.5.208:8848"},{"name":"nacos-enabled","value":"false"},{"name":"server.port","value":"7009"},{"name":"spring.datasource.password","value":"Fe3d9f8169190d"},{"name":"spring.datasource.url","value":"jdbc:mysql://mysqlm.mss-internal.com:3306/data_platform?serverTimezone=GMT%2B8\u0026characterEncoding=UTF-8\u0026useSSL=false"},{"name":"spring.datasource.username","value":"root"},{"name":"spring.flyway.locations","value":"classpath:db/migration/common,classpath:db/migration/prod"},{"name":"spring.profiles.active","value":"prod"}],"image":"docker.das-security.cn/dataplatform/dataplatform:release-v1.7r23c01.05-latest","imagePullPolicy":"Always","name":"dataplatform-server","ports":[{"containerPort":7009,"name":"7009tcp324301","protocol":"TCP"}],"resources":{},"securityContext":{"allowPrivilegeEscalation":false,"capabilities":{},"privileged":false,"readOnlyRootFilesystem":false,"runAsNonRoot":false},"stdin":true,"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","tty":true}],"dnsConfig":{},"dnsPolicy":"ClusterFirst","hostAliases":[{"hostnames":["storm-node-15"],"ip":"192.168.1.15"},{"hostnames":["storm-node-16"],"ip":"192.168.1.112"},{"hostnames":["storm-node-17"],"ip":"192.168.1.11"},{"hostnames":["daas.dbappsecurity.com.cn"],"ip":"10.50.25.211"},{"hostnames":["mysqlm.mss-internal.com"],"ip":"192.168.1.106"},{"hostnames":["kafka1.ahcloud-private.com"],"ip":"192.168.1.15"},{"hostnames":["kafka2.ahcloud-private.com"],"ip":"192.168.1.112"},{"hostnames":["kafka3.ahcloud-private.com"],"ip":"192.168.1.11"},{"hostnames":["es1.ahcloud-private.com"],"ip":"192.168.1.15"},{"hostnames":["es2.ahcloud-private.com"],"ip":"192.168.1.112"},{"hostnames":["es3.ahcloud-private.com"],"ip":"192.168.1.11"},{"hostnames":["es4.ahcloud-private.com"],"ip":"192.168.1.15"},{"hostnames":["account.mss.io"],"ip":"192.168.1.128"}],"restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"terminationGracePeriodSeconds":30}}},"status":{"availableReplicas":1,"conditions":[{"lastTransitionTime":"2023-06-08T11:48:08Z","lastUpdateTime":"2023-06-08T11:48:08Z","message":"Deployment
+      has minimum availability.","reason":"MinimumReplicasAvailable","status":"True","type":"Available"},{"lastTransitionTime":"2023-06-08T11:48:07Z","lastUpdateTime":"2023-06-08T11:48:08Z","message":"ReplicaSet
+      \"dataplatform-server-69cff5949\" has successfully progressed.","reason":"NewReplicaSetAvailable","status":"True","type":"Progressing"}],"observedGeneration":1,"readyReplicas":1,"replicas":1,"updatedReplicas":1}}'
+  creationTimestamp: null
+  generation: 1
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-data-platform-dataplatform-server
+  name: dataplatform-server
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-data-platform-dataplatform-server
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2023-07-19T11:44:42Z"
+        field.cattle.io/ports: '[[{"containerPort":7009,"dnsName":"dataplatform-server-nodeport","hostPort":0,"kind":"NodePort","name":"7009tcp324301","protocol":"TCP","sourcePort":32430}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-data-platform-dataplatform-server
+    spec:
+      containers:
+      - env:
+        - name: dataplatform.basic.on-off.scheduler
+          value: "true"
+        - name: dataplatform.basic.on-off.scheduler-task.ip-bound-info
+          value: "true"
+        - name: dataplatform.datasource-name
+          value: data_platform
+        - name: dataplatform.deploy-path
+          value: /usr/local/app
+        - name: dataplatform.kafka.bootstrap-servers
+          value: 10.50.22.15:9092,10.50.22.16:9092,10.50.22.17:9092
+        - name: dataplatform.permission.admin-password
+          value: 85C68F782494D4D647457E23CA8B915B
+        - name: dataplatform.permission.expiration-time
+          value: "28800"
+        - name: dataplatform.permission.tenant-adapter
+          value: mss
+        - name: dataplatform.request-log.enabled
+          value: "true"
+        - name: etl.worker.append-commands
+          value: --sinkTest true
+        - name: etl.worker.directory
+          value: /usr/local/app
+        - name: etl.worker.jar-name
+          value: data-platform-etl-flink-1.0.jar
+        - name: mss.feign.host
+          value: http://account.buss-platform:8080
+        - name: nacos
+          value: 172.16.5.208:8848
+        - name: nacos-enabled
+          value: "false"
+        - name: server.port
+          value: "7009"
+        - name: spring.datasource.password
+          value: Fe3d9f8169190d
+        - name: spring.datasource.url
+          value: jdbc:mysql://mysqlm.mss-internal.com:3306/data_platform?serverTimezone=GMT%2B8&characterEncoding=UTF-8&useSSL=false
+        - name: spring.datasource.username
+          value: root
+        - name: spring.flyway.locations
+          value: classpath:db/migration/common,classpath:db/migration/prod
+        - name: spring.profiles.active
+          value: prod
+        image: docker.das-security.cn/dataplatform/dataplatform:release-v1.7r23c01.05-latest
+        imagePullPolicy: Always
+        name: dataplatform-server
+        ports:
+        - containerPort: 7009
+          name: 7009tcp324301
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status: {}
